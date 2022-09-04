@@ -1,0 +1,6 @@
+*.wav
+*.DS_Store
+*.class
+*.jar
+.bsp/
+.scala-build/
