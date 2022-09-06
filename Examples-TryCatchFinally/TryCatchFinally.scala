@@ -19,9 +19,9 @@ def readTextFile(filename: String): Try[String] =
 
 @main
 def tryExample =
+    // [1] attempt to read the file
     val maybeContents = readTextFile("/etc/passwd")
+    // [2] handle the result you got
     maybeContents match
-        case Success(content) =>
-            println(content)
-        case Failure(exception) =>
-            System.err.println(exception.getMessage)
+        case Success(content) =>   println(content)
+        case Failure(exception) => System.err.println(exception.getMessage)

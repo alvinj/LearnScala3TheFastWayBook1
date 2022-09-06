@@ -1,5 +1,7 @@
 //> using scala "3"
 
+// run me with 'scala-cli Swing.scala'
+
 import java.awt.{BorderLayout, Dimension}
 import javax.swing.{JFrame, JScrollPane, JTextArea, WindowConstants}
 
