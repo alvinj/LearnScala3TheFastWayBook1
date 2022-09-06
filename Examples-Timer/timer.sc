@@ -2,13 +2,15 @@
 //> using scala "3"
 
 // my assumptions:
-//   * this code is in a file named 'timer'
-//   * the file is made executable with a command like 'chmod +x timer'
+//   * this code is in a file named 'timer.sc'
+//   * the file is made executable with a command like 'chmod +x timer.sc'
 //   * you have 'scala-cli' installed
 //
 // usage:
-//     scala-cli timer 10
-//     scala-cli timer 20 -10
+//     timer.sc minutes-before-alarm <gain-control>
+//     timer.sc 10
+//     timer.sc 20 -10
+//     ('gain-control' should be something like -10 or -20)
 
 
 // import what we need from the Java Sound library
@@ -45,7 +47,7 @@ for i <- 1 to minutesToWait do
 // about 7 seconds, so i sleep that long in between plays.
 // -------------------------------------------------------------
 for i <- 1 to 2 do
-    playSoundfile("./gong1.wav")
+    playSoundfile("./gong.wav")
     Thread.sleep(7_000)
 
 
@@ -53,9 +55,9 @@ for i <- 1 to 2 do
 // ------------------------------------------------------------
 
 def showUsageAndExit() =
-    Console.err.println("Usage: timer minutes-before-alarm <gain-control>")
-    Console.err.println("Ex:    timer 10")
-    Console.err.println("Ex:    timer 10 -20")
+    Console.err.println("Usage: timer.sc minutes-before-alarm <gain-control>")
+    Console.err.println("Ex:    timer.sc 10")
+    Console.err.println("Ex:    timer.sc 10 -20")
     Console.err.println("       'gain-control' should be something like -10 or -20")
     System.exit(1)
 
